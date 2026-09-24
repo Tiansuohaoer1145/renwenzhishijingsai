@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三星堆：穿越三千年的文明对话</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B5A2B',      // 青铜色
+                        secondary: '#D4AF37',    // 金色
+                        accent: '#2C3E50',       // 深蓝色
+                        background: '#F5F5DC',   // 米白色
+                        dark: '#1A1A1A',         // 深黑色
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans SC', 'sans-serif'],
+                        serif: ['Noto Serif SC', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            .text-shadow-lg {
+                text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+            }
+            .page-transition {
+                transition: opacity 0.5s ease-in-out;
+            }
+            .image-zoom {
+                transition: transform 0.5s ease;
+            }
+            .image-zoom:hover {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-background h-screen">
+    <!-- 所有页面容器 -->
+    <div id="pages-container" class="relative h-full w-full">
+        <!-- 1. 封面页 -->
+        <div class="page absolute inset-0 flex flex-col items-center justify-center page-transition" data-page="1">
+            <div class="absolute inset-0 z-0">
+                <img src="https://x0.ifengimg.com/res/2020/9186DE92F400964643224D5189CA311C2F019C98_size157_w1440_h1080.jpeg" alt="青铜纵目面具特写" class="w-full h-full object-cover opacity-80">
+                <div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/70"></div>
+            </div>
+            <div class="relative z-10 text-center px-6">
+                <h1 class="text-[clamp(2.5rem,8vw,5rem)] font-serif font-bold text-white text-shadow-lg mb-4 opacity-0 transform translate-y-8" id="title1">三星堆</h1>
+                <p class="text-[clamp(1rem,3vw,1.5rem)] font-sans text-white text-shadow mb-8 opacity-0 transform translate-y-8" id="subtitle1">穿越三千年的文明对话</p>
+                <button id="startBtn" class="bg-secondary/90 hover:bg-secondary text-dark font-bold py-3 px-8 rounded-full text-lg transform transition hover:scale-105 opacity-0" onclick="nextPage()">
+                    开始探索 <i class="fa fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- 2. 序章：意外的发现 -->
+        <div class="page absolute inset-0 hidden page-transition" data-page="2">
+            <div class="absolute inset-0 z-0">
+                <img src="https://ts4.tc.mm.bing.net/th/id/OIP-C.g_IGd5_2eQDjWiwnT2C7iQHaFs?rs=1&pid=ImgDetMain&o=7&rm=3" alt="考古发掘现场" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-dark/50"></div>
+            </div>
+            <div class="relative z-10 h-full flex flex-col justify-center px-6 md:px-16 max-w-4xl mx-auto">
+                <h2 class="text-[clamp(1.5rem,5vw,2.5rem)] font-serif font-bold text-white text-shadow mb-8">序章：意外的发现</h2>
+                <p class="text-[clamp(1rem,3vw,1.25rem)] text-white text-shadow leading-relaxed mb-6 reveal-text">1929年，四川广汉，一位农民在挖沟时，意外敲开了通往古蜀文明的大门。</p>
+                <p class="text-[clamp(1rem,3vw,1.25rem)] text-white text-shadow leading-relaxed mb-6 reveal-text">一坑精美的玉器，揭开了一个被遗忘了三千年的文明。</p>
+                <p class="text-[clamp(1rem,3vw,1.25rem)] text-white text-shadow leading-relaxed reveal-text">直到1986年，两个大型祭祀坑的发现，让三星堆惊艳世界，被誉为"长江文明之源"。</p>
+            </div>
+        </div>
+
+        <!-- 3. 青铜神树：连接天地的使者 -->
+        <div class="page absolute inset-0 hidden page-transition" data-page="3">
+            <div class="flex flex-col h-full">
+                <div class="overflow-hidden relative" style="height: 80vh;">
+                    <img src="https://ts1.tc.mm.bing.net/th/id/OIP-C.lMQtP9ezEsRozKj7CvB8-AHaNK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="青铜神树全景" class="w-full h-full object-cover image-zoom">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent"></div>
+                </div>
+                <div class="bg-dark/90 text-white p-6">
+                    <h2 class="text-[clamp(1.5rem,5vw,2rem)] font-serif font-bold mb-4">青铜神树：连接天地的使者</h2>
+                    <p class="text-[clamp(1rem,3vw,1.1rem)] leading-relaxed">
+                        3.96米高的青铜神树，分三层九枝，栖息着太阳神鸟，是古蜀人沟通天地的媒介。
+                        树干上一条龙蜿蜒而下，仿佛从天界降临人间。
+                        这件国宝级文物，展现了古蜀人非凡的想象力和精湛的工艺。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. 纵目面具：超越时空的凝视 -->
+        <div class="page absolute inset-0 hidden page-transition" data-page="4">
+            <div class="flex flex-col md:flex-row h-full">
+                <div class="md:w-1/2 overflow-hidden relative">
+                    <img src="https://ts1.tc.mm.bing.net/th/id/R-C.8f623ed6081124f1e833da8e9cbca4e1?rik=3NuzAocJmroVBg&riu=http%3a%2f%2fn.sinaimg.cn%2fsinakd20210913ac%2f133%2fw2000h1333%2f20210913%2f68ea-ab6857fe520764aeabce5865ba4295e6.jpg&ehk=WQfPdLKaNWHeQ6R7in40ja%2fSRF940Qly0wyPfPcvX18%3d&risl=&pid=ImgRaw&r=0" alt="纵目面具特写" class="w-full h-full object-cover" id="maskImage">
+                </div>
+                <div class="md:w-1/2 bg-primary/90 text-white p-8 flex flex-col justify-center">
+                    <h2 class="text-[clamp(1.5rem,5vw,2rem)] font-serif font-bold mb-6">纵目面具：超越时空的凝视</h2>
+                    <p class="text-[clamp(1rem,3vw,1.1rem)] leading-relaxed mb-4">
+                        凸目、大耳、宽嘴，这些夸张的特征，是古蜀人对"千里眼、顺风耳"的想象，还是某种神秘仪式的装扮？
+                    </p>
+                    <p class="text-[clamp(1rem,3vw,1.1rem)] leading-relaxed">
+                        这件面具最令人惊叹的是其突出的眼睛，向外伸出约16厘米，这种造型在世界考古史上独一无二，至今仍是一个未解之谜。
+                    </p>
+                    <button class="mt-8 bg-secondary text-dark font-bold py-2 px-4 rounded-full self-start transform transition hover:scale-105" onclick="animateMask()">
+                        查看动态效果
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. 金杖：权力的象征 -->
+        <div class="page absolute inset-0 hidden page-transition" data-page="5">
+            <div class="absolute inset-0 z-0">
+                <img src="https://n.sinaimg.cn/sinakd20210914s/128/w2000h1328/20210914/0f93-20ef01c81c041d4b0f6b525903b7f6e7.jpg" alt="金杖展示" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-dark/80 to-dark/40"></div>
+            </div>
+            <div class="relative z-10 h-full flex flex-col justify-center px-6 md:px-16 max-w-xl">
+                <h2 class="text-[clamp(1.5rem,5vw,2.5rem)] font-serif font-bold text-white text-shadow mb-6">金杖：权力的象征</h2>
+                <p class="text-[clamp(1rem,3vw,1.25rem)] text-white text-shadow leading-relaxed mb-6">
+                    包金的木杖，刻有鱼、鸟、人图案，是中国最早的王权象征之一，比甲骨文记载的历史还要早千年。
+                </p>
+                <p class="text-[clamp(1rem,3vw,1.25rem)] text-white text-shadow leading-relaxed">
+                    这根金杖表明，在三星堆时期，已经形成了高度发达的社会组织和等级制度，是古蜀文明进入文明时代的重要标志。
+                </p>
+                <button class="mt-8 bg-transparent border-2 border-secondary text-secondary hover:bg-secondary hover:text-dark font-bold py-3 px-6 rounded-full transform transition hover:scale-105" onclick="rotateGoldStaff()">
+                    <i class="fa fa-refresh mr-2"></i> 360°查看
+                </button>
+            </div>
+        </div>
+
+        <!-- 6. 未解之谜：文明的密码 -->
+        <div class="page absolute inset-0 hidden page-transition" data-page="6">
+            <div class="flex flex-col h-full">
+                <div class="p-8 bg-dark text-white flex-1">
+                    <h2 class="text-[clamp(1.5rem,5vw,2.5rem)] font-serif font-bold mb-8 text-center">未解之谜：文明的密码</h2>
+                    
+                    <div class="space-y-8 max-w-3xl mx-auto">
+                        <div class="bg-accent/50 p-6 rounded-lg transform transition hover:scale-105">
+                            <p class="text-[clamp(1rem,3vw,1.2rem)] leading-relaxed">
+                                <i class="fa fa-question-circle text-secondary mr-3 text-xl"></i>
+                                没有文字记载，没有历史传承，这些精美的文物从何而来？
+                            </p>
+                        </div>
+                        
+                        <div class="bg-accent/50 p-6 rounded-lg transform transition hover:scale-105">
+                            <p class="text-[clamp(1rem,3vw,1.2rem)] leading-relaxed">
+                                <i class="fa fa-question-circle text-secondary mr-3 text-xl"></i>
+                                古蜀人为何创造出如此独特的文明？他们的审美和信仰来自何处？
+                            </p>
+                        </div>
+                        
+                        <div class="bg-accent/50 p-6 rounded-lg transform transition hover:scale-105">
+                            <p class="text-[clamp(1rem,3vw,1.2rem)] leading-relaxed">
+                                <i class="fa fa-question-circle text-secondary mr-3 text-xl"></i>
+                                如此发达的文明，为何突然消失？是自然灾害，还是社会变革？
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-1/3 relative">
+                    <img src="https://n.sinaimg.cn/sinakd2021320s/200/w1080h720/20210320/8272-kmrcukz2789981.jpg" alt="三星堆遗址全景" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. 技艺之美：古代的黑科技 -->
+        <div class="page absolute inset-0 hidden page-transition" data-page="7">
+            <div class="flex flex-col md:flex-row h-full">
+                <div class="md:w-1/2 bg-dark text-white p-8 flex flex-col justify-center">
+                    <h2 class="text-[clamp(1.5rem,5vw,2rem)] font-serif font-bold mb-6">技艺之美：古代的黑科技</h2>
+                    <p class="text-[clamp(1rem,3vw,1.1rem)] leading-relaxed mb-6">
+                        高达86.4厘米的青铜大立人像，采用分体铸造法，接缝处误差不超过0.1毫米，三千年前的工艺令人叹为观止。
+                    </p>
+                    <p class="text-[clamp(1rem,3vw,1.1rem)] leading-relaxed mb-6">
+                        古蜀工匠已掌握了合金配比、失蜡法铸造等复杂工艺，其技术水平不亚于同时期的中原文明，甚至在某些方面更为先进。
+                    </p>
+                    <button class="mt-4 bg-secondary text-dark font-bold py-2 px-4 rounded-full self-start transform transition hover:scale-105" onclick="showCastingAnimation()">
+                        查看铸造过程
+                    </button>
+                </div>
+                <div class="md:w-1/2 overflow-hidden relative">
+                    <img src="https://pic1.zhimg.com/v2-c86421f279a65d712018693b53747ab8_b.jpg" alt="青铜大立人像" class="w-full h-full object-cover" id="castingImage">
+                    <div id="castingAnimation" class="absolute inset-0 bg-dark/80 flex items-center justify-center hidden">
+                        <div class="text-white text-center p-6">
+                            <i class="fa fa-cog fa-spin text-5xl text-secondary mb-4"></i>
+                            <p class="text-xl">青铜铸造工艺模拟</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8. 古今对话：经典的现代表达 -->
+        <div class="page absolute inset-0 hidden page-transition" data-page="8">
+            <div class="absolute inset-0 z-0">
+                <img src="https://ts1.tc.mm.bing.net/th/id/R-C.b392a798fc9e2e0b6b73f3c1dd0e2c52?rik=9UD9%2bekxLholMA&riu=http%3a%2f%2fk.sinaimg.cn%2fn%2fsinakd20119%2f367%2fw700h467%2f20231116%2f0199-ee5a0248aaff90fb1390e453d14cb08c.jpg%2fw700d1q75cms.jpg%3fby%3dcms_fixed_width&ehk=RQNbvUFyqG%2bHZDSFwYVmbBMpxgPjKfAIn0Bpsy6yqlE%3d&risl=&pid=ImgRaw&r=0" alt="现代艺术中的三星堆元素" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/50 to-dark/30"></div>
+            </div>
+            <div class="relative z-10 h-full flex flex-col justify-end p-6 md:p-10">
+                <h2 class="text-[clamp(1.5rem,5vw,2.5rem)] font-serif font-bold text-white text-shadow mb-6">古今对话：经典的现代表达</h2>
+                <p class="text-[clamp(1rem,3vw,1.25rem)] text-white text-shadow leading-relaxed mb-8 max-w-2xl">
+                    从春晚舞蹈《金面》到三星堆主题文创，从手游皮肤到潮流服饰，古老文明正以新的方式融入当代生活。
+                    这些现代表达不仅让三星堆"活"了起来，更让年轻人感受到传统文化的魅力。
+                </p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-2 transform transition hover:scale-105">
+                        <img src="https://web.csp.chinamcloud.com/cms/cdgxqrmt/upload/HttpImage/mrtpsc/2023/07/16/955c53e408ee4c0db655b6475fed341e.jpg" alt="三星堆文创产品1" class="w-full h-full object-cover rounded">
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-2 transform transition hover:scale-105">
+                        <img src="https://ts1.tc.mm.bing.net/th/id/R-C.3d61a5eba84e5501a318c013031f601a?rik=0c8GTIW64C1n0w&riu=http%3a%2f%2fn.sinaimg.cn%2fsinakd20220612ac%2f259%2fw960h899%2f20220612%2f8f4b-58169b2b8381c0347a05af5697d74ea6.jpg&ehk=d%2bYtJ8XFz3SOqFSIaPt6qB0GD3oTRl6vDYSvozIDgjc%3d&risl=&pid=ImgRaw&r=0" alt="三星堆文创产品2" class="w-full h-full object-cover rounded">
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-2 transform transition hover:scale-105">
+                        <img src="https://img.alicdn.com/i1/709235769/O1CN01ZkroVb1sUFnKmNnLn_!!709235769.jpg" alt="三星堆文创产品3" class="w-full h-full object-cover rounded">
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-2 transform transition hover:scale-105">
+                        <img src="https://cbu01.alicdn.com/img/ibank/O1CN01eh846Z1YzafhipftP_!!2218420603130-0-cib.jpg" alt="三星堆文创产品4" class="w-full h-full object-cover rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 9. 互动：你的文明想象 -->
+        <div class="page absolute inset-0 hidden page-transition" data-page="9">
+            <div class="absolute inset-0 z-0">
+                <img src="https://img95.699pic.com/photo/60035/2636.jpg_wh860.jpg" alt="互动背景图" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-dark/60"></div>
+            </div>
+            <div class="relative z-10 h-full flex flex-col items-center justify-center p-6 max-w-2xl mx-auto">
+                <h2 class="text-[clamp(1.5rem,5vw,2.5rem)] font-serif font-bold text-white text-shadow text-center mb-6">你的文明想象</h2>
+                <p class="text-[clamp(1rem,3vw,1.25rem)] text-white text-shadow text-center mb-8">
+                    如果古蜀人有朋友圈，他们会分享什么？
+                    写下你的想法，生成属于你的三星堆风格朋友圈
+                </p>
+                
+                <div class="w-full bg-white/10 backdrop-blur-md rounded-lg p-6 mb-6">
+                    <textarea id="thoughtInput" placeholder="例如：今天祭祀典礼的青铜酒器真精美，祖先一定会保佑我们丰收..." class="w-full h-32 bg-white/20 border border-secondary/50 rounded p-4 text-white placeholder-white/60 text-lg resize-none focus:outline-none focus:ring-2 focus:ring-secondary"></textarea>
+                </div>
+                
+                <button id="generateBtn" class="bg-secondary text-dark font-bold py-3 px-8 rounded-full text-lg transform transition hover:scale-105 mb-6" onclick="generatePost()">
+                    生成我的三星堆朋友圈
+                </button>
+                
+                <div id="postResult" class="w-full bg-white rounded-lg shadow-xl p-6 hidden">
+                    <div class="flex items-center mb-4">
+                        <img src="https://img95.699pic.com/photo/60035/2635.jpg_wh860.jpg" alt="古蜀人头像" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h3 class="font-bold text-dark">古蜀先民</h3>
+                            <p class="text-sm text-gray-500">刚刚</p>
+                        </div>
+                    </div>
+                    <p id="postContent" class="text-dark mb-4"></p>
+                    <img src="https://yn.yunnan.cn/pic/003/034/564/00303456483_3810f4f3.jpg" alt="三星堆文物" class="w-full h-48 object-cover rounded mb-4">
+                    <div class="flex items-center text-gray-500">
+                        <button class="flex items-center mr-6"><i class="fa fa-heart-o mr-2"></i> 点赞</button>
+                        <button class="flex items-center"><i class="fa fa-comment-o mr-2"></i> 评论</button>
+                    </div>
+                </div>
+                
+                <button id="savePostBtn" class="bg-accent text-white font-bold py-2 px-6 rounded-full text-sm transform transition hover:scale-105 hidden" onclick="alert('已保存到相册')">
+                    <i class="fa fa-download mr-2"></i> 保存图片
+                </button>
+            </div>
+        </div>
+
+        <!-- 10. 尾声：文明的力量 -->
+        <div class="page absolute inset-0 hidden page-transition" data-page="10">
+            <div class="flex flex-col h-full">
+                <div class="flex-1 overflow-hidden relative">
+                    <img src="https://www.qwbaike.cn/uploads/202303/1677631294b94Kvbjt.jpg" alt="三星堆博物馆外观" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-b from-dark/40 to-dark/80"></div>
+                </div>
+                <div class="bg-dark text-white p-6 md:p-8">
+                    <h2 class="text-[clamp(1.5rem,5vw,2rem)] font-serif font-bold mb-4">尾声：文明的力量</h2>
+                    <p class="text-[clamp(1rem,3vw,1.1rem)] leading-relaxed mb-6">
+                        三星堆告诉我们，中华文明是多元一体、兼容并蓄的。每一次考古发现，都是一次与历史的对话，让我们更好地理解自己是谁，从何而来。
+                    </p>
+                    
+                    <div class="flex flex-col md:flex-row items-center justify-between mt-8">
+                        
+                        <div class="flex flex-col items-center">
+                            <p class="mb-4 text-center">分享给朋友，一起探索古蜀文明</p>
+                            <div class="flex space-x-4">
+                                <button class="w-12 h-12 rounded-full bg-[#1DA1F2] flex items-center justify-center transform transition hover:scale-110">
+                                    <i class="fa fa-twitter text-white text-xl"></i>
+                                </button>
+                                <button class="w-12 h-12 rounded-full bg-[#4267B2] flex items-center justify-center transform transition hover:scale-110">
+                                    <i class="fa fa-facebook text-white text-xl"></i>
+                                </button>
+                                <button class="w-12 h-12 rounded-full bg-[#25D366] flex items-center justify-center transform transition hover:scale-110">
+                                    <i class="fa fa-whatsapp text-white text-xl"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部导航栏 -->
+        <div id="navigation" class="fixed bottom-0 left-0 right-0 bg-dark/80 backdrop-blur-md text-white z-50 py-3 px-6">
+            <div class="flex items-center justify-between max-w-4xl mx-auto">
+                <button id="prevBtn" class="flex items-center justify-center w-10 h-10 rounded-full bg-primary/50 hover:bg-primary transition" onclick="prevPage()">
+                    <i class="fa fa-arrow-left"></i>
+                </button>
+                
+                <div class="flex items-center">
+                    <span id="pageIndicator" class="mr-4">1/10</span>
+                    <button id="menuBtn" class="flex items-center justify-center w-8 h-8 rounded-full bg-secondary/80 hover:bg-secondary text-dark transition" onclick="togglePageMenu()">
+                        <i class="fa fa-th"></i>
+                    </button>
+                </div>
+                
+                <button id="nextBtn" class="flex items-center justify-center w-10 h-10 rounded-full bg-primary/50 hover:bg-primary transition" onclick="nextPage()">
+                    <i class="fa fa-arrow-right"></i>
+                </button>
+            </div>
+            
+            <!-- 页码菜单 (默认隐藏) -->
+            <div id="pageMenu" class="absolute bottom-full left-0 right-0 bg-dark/95 backdrop-blur-lg p-4 mb-2 rounded-t-lg hidden">
+                <div class="grid grid-cols-5 md:grid-cols-10 gap-2 max-w-4xl mx-auto">
+                    <!-- 页码按钮将通过JS动态生成 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 当前页码
+        let currentPage = 1;
+        // 总页数
+        const totalPages = 10;
+        
+        // DOM元素加载完成后执行
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始化封面动画
+            setTimeout(() => {
+                document.getElementById('title1').classList.add('transition', 'duration-1000', 'opacity-100', 'translate-y-0');
+            }, 500);
+            
+            setTimeout(() => {
+                document.getElementById('subtitle1').classList.add('transition', 'duration-1000', 'opacity-100', 'translate-y-0');
+            }, 1000);
+            
+            setTimeout(() => {
+                document.getElementById('startBtn').classList.add('transition', 'duration-1000', 'opacity-100');
+                // 播放背景音乐
+                document.getElementById('backgroundMusic').play().catch(e => console.log('背景音乐播放失败:', e));
+            }, 1500);
+            
+            // 生成页码菜单
+            generatePageMenu();
+            
+            // 初始化页面显示
+            updatePageDisplay();
+        });
+        
+        // 生成页码菜单
+        function generatePageMenu() {
+            const menuContainer = document.getElementById('pageMenu').querySelector('div');
+            menuContainer.innerHTML = '';
+            
+            for (let i = 1; i <= totalPages; i++) {
+                const pageBtn = document.createElement('button');
+                pageBtn.className = `w-10 h-10 rounded-full flex items-center justify-center transition ${i === currentPage ? 'bg-secondary text-dark' : 'bg-white/10 hover:bg-primary'}`;
+                pageBtn.textContent = i;
+                pageBtn.onclick = () => goToPage(i);
+                menuContainer.appendChild(pageBtn);
+            }
+        }
+        
+        // 切换页码菜单显示/隐藏
+        function togglePageMenu() {
+            const pageMenu = document.getElementById('pageMenu');
+            pageMenu.classList.toggle('hidden');
+        }
+        
+        // 上一页
+        function prevPage() {
+            if (currentPage > 1) {
+                goToPage(currentPage - 1);
+            }
+        }
+        
+        // 下一页
+        function nextPage() {
+            if (currentPage < totalPages) {
+                goToPage(currentPage + 1);
+            }
+        }
+        
+        // 跳转到指定页面
+        function goToPage(pageNum) {
+            if (pageNum < 1 || pageNum > totalPages) return;
+            
+            // 隐藏当前页
+            document.querySelector(`.page[data-page="${currentPage}"]`).classList.add('hidden', 'opacity-0');
+            
+            // 更新当前页码
+            currentPage = pageNum;
+            
+            // 更新页面显示
+            updatePageDisplay();
+            
+            // 隐藏页码菜单
+            document.getElementById('pageMenu').classList.add('hidden');
+        }
+        
+        // 更新页面显示
+        function updatePageDisplay() {
+            // 显示当前页
+            const currentPageEl = document.querySelector(`.page[data-page="${currentPage}"]`);
+            currentPageEl.classList.remove('hidden');
+            // 触发重排后添加淡入效果
+            setTimeout(() => {
+                currentPageEl.classList.remove('opacity-0');
+            }, 50);
+            
+            // 更新页码指示器
+            document.getElementById('pageIndicator').textContent = `${currentPage}/${totalPages}`;
+            
+            // 更新页码菜单按钮状态
+            const pageButtons = document.getElementById('pageMenu').querySelectorAll('button');
+            pageButtons.forEach((btn, index) => {
+                const pageNum = index + 1;
+                if (pageNum === currentPage) {
+                    btn.classList.remove('bg-white/10', 'hover:bg-primary');
+                    btn.classList.add('bg-secondary', 'text-dark');
+                } else {
+                    btn.classList.remove('bg-secondary', 'text-dark');
+                    btn.classList.add('bg-white/10', 'hover:bg-primary');
+                }
+            });
+            
+            // 更新按钮状态
+            document.getElementById('prevBtn').disabled = currentPage === 1;
+            document.getElementById('nextBtn').disabled = currentPage === totalPages;
+            
+            // 为新页面添加动画效果
+            addPageAnimations(currentPage);
+        }
+        
+        // 为页面添加动画效果
+        function addPageAnimations(pageNum) {
+            // 第2页文字渐显效果
+            if (pageNum === 2) {
+                const revealElements = document.querySelectorAll('.reveal-text');
+                revealElements.forEach((el, index) => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(20px)';
+                    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    
+                    setTimeout(() => {
+                        el.style.opacity = '1';
+                        el.style.transform = 'translateY(0)';
+                    }, 300 * (index + 1));
+                });
+            }
+        }
+        
+        // 青铜面具动画效果
+        function animateMask() {
+            const maskImage = document.getElementById('maskImage');
+            maskImage.classList.add('scale-110', 'transition', 'duration-1000');
+            
+            setTimeout(() => {
+                maskImage.classList.remove('scale-110');
+            }, 1000);
+        }
+        
+        // 金杖旋转效果
+        function rotateGoldStaff() {
+            const currentPageEl = document.querySelector(`.page[data-page="5"]`);
+            const imageContainer = currentPageEl.querySelector('.relative');
+            
+            // 创建旋转动画元素
+            const rotationEffect = document.createElement('div');
+            rotationEffect.className = 'absolute inset-0 flex items-center justify-center';
+            rotationEffect.innerHTML = '<i class="fa fa-refresh fa-spin text-5xl text-secondary"></i>';
+            imageContainer.appendChild(rotationEffect);
+            
+            // 3秒后移除动画元素
+            setTimeout(() => {
+                rotationEffect.remove();
+            }, 3000);
+        }
+        
+        // 显示铸造动画
+        function showCastingAnimation() {
+            const animationEl = document.getElementById('castingAnimation');
+            animationEl.classList.remove('hidden');
+            
+            setTimeout(() => {
+                animationEl.classList.add('hidden');
+            }, 3000);
+        }
+        
+        // 生成朋友圈内容
+        function generatePost() {
+            const input = document.getElementById('thoughtInput').value;
+            if (!input.trim()) {
+                alert('请输入你的想法');
+                return;
+            }
+            
+            document.getElementById('postContent').textContent = input;
+            document.getElementById('postResult').classList.remove('hidden');
+            document.getElementById('savePostBtn').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
